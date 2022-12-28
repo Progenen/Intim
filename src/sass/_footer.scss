@@ -1,0 +1,121 @@
+.footer {
+    padding: rem(52) 0 rem(82) 0;
+    border-top: 1px solid #E8E8E8;
+    font-size: rem(18);
+
+    &__row {
+        justify-content: space-between;
+    }
+
+    &__about {
+        flex: 0 1 25%;
+    }
+
+    &__menu {
+        flex: 0 1 34.566%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__mail {
+        flex: 0 1 30.6%;
+    }
+
+    &__col {}
+
+    &__about-logo {
+        fill: $blue;
+        max-width: 247px;
+        height: 44px;
+        width: 100%;
+    }
+
+    &__about-text {
+        color: #9690B1;
+        margin: rem(22) 0 0 0;
+        padding: 0;
+    }
+
+    &__menu-list {
+        list-style: none;
+        margin: 0 rem(65) 0 0;
+        padding: 0;
+        &:last-child {
+            margin: 0 0 0 0;
+        }
+    }
+
+    &__menu-item {
+        margin: 0 0 rem(11) 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__menu-link {
+        color: $blue;
+        display: inline-flex;
+        &:hover {
+            line-height: 14px;
+            @include underline;
+        }
+    }
+
+    &__mail-descr {
+        padding: 0;
+        margin: 0 0 8px 0;
+    }
+
+    &__mail-link {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        span {
+            line-height: 17px;
+            border-bottom: 1px solid $blue;
+        }
+    }
+
+    &__mail-icon {
+        width: 20px;
+        height: 16px;
+        fill: $blue;
+    }
+}
+
+@media (max-width:650px){
+    .footer {
+        &__row {
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        &__about{
+            margin: auto;
+        }
+
+        &__about-text {
+            display: none;
+        }
+
+        &__menu-list {
+            text-align: center;
+            margin: 20px 0 0 0;
+        }
+
+        &__mail {
+            text-align: center;
+        }
+        
+        &__menu-list:last-child {
+            display: none;
+        }
+
+        &__mail-descr {
+            margin: 25px auto 21px auto;
+            text-align: center;
+            max-width: 260px;
+            width: 100%;
+        }
+    }
+}

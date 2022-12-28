@@ -1,0 +1,381 @@
+.catalog {
+    flex: 0 1 76.223%;  
+
+    &__header {}
+
+    &__header-list {}
+
+    &__body {
+        padding: 0 26px 0;
+    }
+}
+
+.catalog-descr {
+
+    &__title {
+        color: $blue;
+        font-size: 24px;
+        margin: 21px 0 14px 0;
+    }
+
+    &__text {
+        font-size: 18px;
+        margin: 0;
+    }
+}
+
+.catalog-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+
+.catalog-item {
+    flex: 0 1 49%;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    margin: 26px 0 0 0;
+
+    &__header {
+        width: 100%;
+        position: relative;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__favorite {
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        border: none;
+        transition: .3s;
+        transform: scale(1);
+
+        &:hover {
+            transform: scale(1.05);
+
+        }
+
+        &:active {
+            transform: scale(.8);
+        }
+    }
+
+    &__body {
+        padding: 13px 17px 0;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        color: $blue;
+    }
+
+    &__title-text {
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &__title-icon {
+        width: 30px;
+        height: 30px;
+        margin: 0 0 0 rem(22);
+    }
+
+    &__phone {
+        margin: 0 0 0 rem(57);
+        max-width: 172px;
+        width: 100%;
+        padding: 7px 5px;
+        background: linear-gradient(91.2deg, #4926E8 0.29%, #2DC8FF 112.3%);
+        border-radius: 10px;
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        transition: .3s;
+        font-size: rem(18);
+        &:hover {
+            background: linear-gradient(91.2deg, #4926E8 0.19%, #2DC8FF 113.3%);
+            opacity: .9;
+        }
+    }
+
+    &__phone-icon {
+        width: 15px;
+        height: 14px;
+        margin-top: -4px;
+        margin-right: 9px;
+        fill: #fff;
+    }
+
+    &__location {
+        display: flex;
+    }
+
+    &__location-icon {
+        fill: #FF005C;
+        width: rem(30);
+        height: rem(27);
+        margin-right: 5.7px;
+    }
+
+    &__location-text {
+        color: #FF005C;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 16px 0 13px 0;
+        padding: 0;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item-name {
+        color: #9690B1;
+        flex: 0 1 10%;
+    }
+
+    &__item-space {
+        border-bottom: 2px dotted #9690B1;
+        flex: 1 0;
+        margin: 0 12px 8px 12px;
+    }
+
+    &__item-cur {
+        color: $blue;
+        font-weight: 700;
+        flex: 0 1 auto;
+        text-align: right;
+        padding-left: 15px;
+        position: relative;
+        min-width: 40px;
+        &_price {
+            padding-right: 15px;
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url("../images/graphics/icons/rub.svg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                right: 0;
+                top: 6px;
+                width: 9.92px;
+                height: 12.75px;
+            }
+        }
+    }
+
+    &__tags {}
+    
+    &__ui {
+        margin: 27px 0 18px 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    &__ui-item {
+    }
+
+    &__ui-link {
+        display: block;
+        svg {
+            width: 29%;
+            height: 32px;
+            fill: $blue;
+        }
+    }
+}
+.btn {
+}
+
+.tag {}
+
+.main-top-menu {
+    width: 100%;
+    padding: 17px 0 14px 17px;
+    position: relative;
+
+    &::after,
+    &::before {
+        position: absolute;
+        content: "";
+        width: 150%;
+        height: 1px;
+        left: 0;
+        background-color: #E4E4E4;
+    }
+
+    &::after {
+        top: 0;
+    }
+
+    &::before {
+        bottom: 0;
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        display: flex;
+    }
+
+    &__icon {
+        width: 9%;
+        fill: $blue;
+        display: none;
+    }
+
+    &__link {
+        color: $blue;
+    }
+}
+
+@media (max-width:1000px){
+    
+    .catalog-item {
+        &__phone {
+            margin: 0 0 0 rem(12);
+        }
+
+        &__title-icon {
+            margin: 0 0 0 rem(7);
+        }
+
+        &__item-cur_price::after {
+            top: 4px;
+            width: rem(9.92);
+            height: rem(12.75);
+        }
+    }
+}
+
+@media (max-width:860px) {
+    .catalog {
+        flex: 0 1 100%;
+
+        &__body {
+            padding: 0;
+        }
+    }
+
+    .main-top-menu {
+        padding: 14px 0;
+
+        &::after,
+        &::before {
+            left: -15px;
+        }
+    }
+
+    .catalog-item {
+        &__phone {
+            margin: 0 0 0 37px;
+            max-width: 172px;
+        }
+
+        &__title-icon {
+            margin: 0 0 0 14px;
+        }
+    }
+
+}
+
+@media (max-width:440px) {
+    .main-top-menu {
+
+        &::after,
+        &::before {
+            content: none;
+        }
+
+        &__list {
+            flex-direction: column;
+            padding: 0 2rem;
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        &__icon {
+            width: 5%;
+            max-height: 25px;
+            margin-right: 17px;
+            display: block;
+        }
+
+        &__item {
+            margin-top: 22px;
+        }
+    }
+}
+@media (max-width:680px){
+    .catalog-items {
+        flex-direction: column;
+        max-width: 375px;
+        margin: auto;
+    }
+
+    .catalog-item {
+        &__phone {
+            font-size: 18px;
+        }
+        
+        &__location-icon {
+            width: 30px;
+            height: 27px;
+        }
+
+        &__location-text {
+            font-size: 18px;
+        }
+
+        &__item-name {
+            font-size: 18px;
+        }
+
+        &__item-cur {
+            font-size: 18px;
+            &_price::after {
+                width: 9.92px;
+                height: 12.75px;
+                top: 6px;
+            }
+        }
+
+
+    }
+}
+
+@media (max-width:375px){
+    .catalog-item__phone {
+        margin: 0 0 0 20px;
+        font-size: 12px;
+    }
+}

@@ -1,8 +1,13 @@
 // Libs
-
+@import "libs/jquery.fancybox.css";
+@import "libs/slick.css";
 // Main
+@import "animation";
 @import "support";
 @import "all";
 @import "script-classes";
 @import "header";
+@import "parts/sidebar";
+@import "parts/catalog";
+@import "parts/profile";
 @import "footer";

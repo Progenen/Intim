@@ -1,25 +1,112 @@
 * {
     box-sizing: border-box;
+    min-height: 0;
+    min-width: 0;
 }
 
 body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    font-family: Roboto;
+    font-size: rem(18);
+}
+
+html {
+    font-size: 14px;
+    font-family: "Circe";
     font-weight: 400;
 }
 
 body,
 html {
-    height: 100%;
     overflow-x: hidden;
 }
 
-a {
+main {
+    margin-top: rem(25);
+    margin-bottom: rem(57);
+}
+
+.link-reset {
+    text-decoration: none;
+
     &:hover {
         text-decoration: none;
     }
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: inherit;
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+.price {
+    padding-right: 15px;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url("../images/graphics/icons/rub.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        right: 0;
+        top: 6px;
+        width: 9.92px;
+        height: 12.75px;
+    }
+}
+
+.emoji {
+    margin: 0 0 -3px 2px;
+}
+
+main {
+}
+
+.breadcrumbs {
+    &__list {
+        list-style: none;
+        margin: 5px 0;
+        display: flex;
+        padding: 30px 0 0 0;
+    }
+
+    &__item {
+        margin: 0 8px 0 0;
+
+        &::after {
+            content: "/";
+            color: #767676;
+            font-weight: 300;
+        }
+
+        &:last-child {
+            &::after {
+                content: none;
+            }
+
+            .breadcrumbs__link {
+                color: $blue;
+            }
+        }
+    }
+
+    &__link {
+        color: #767676;
+        font-weight: 300;
+        font-size: 18px;
+    }
+}
+
+.raiting {
 }
 
 .wrapper {
@@ -32,6 +119,94 @@ a {
     flex: 1 0 auto;
 }
 
+.row {
+    display: flex;
+}
+
+.container {
+    max-width: 1190px;
+    width: 100%;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0 4px;
+    cursor: pointer;
+    color: $blue;
+    transition: .3s;
+    background-color: #E0DAFB;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.metro {
+    display: flex;
+    &__icon {
+        
+        fill: #FF005C;
+        width: rem(30);
+        height: rem(27);
+        margin-right: 5.7px;
+    }
+
+    &__text {
+        color: #FF005C;
+        font-size: rem(18);
+    }
+}
+
+.item-name {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: $blue;
+    &__icon {
+        
+        width: 30px;
+        height: 30px;
+        margin: 0 0 0 rem(22);
+    }
+
+    &__text {
+        font-weight: 700;
+    }
+
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
 footer {
     flex: 0 0 auto;
+}
+
+@media (max-width:1200px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:920px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:680px) {
+    .container {
+        padding: 0 7px;
+    }
+
+    .tag {
+        font-size: 18px;
+    }
+
+    .breadcrumbs {
+        display: none;
+    }
 }

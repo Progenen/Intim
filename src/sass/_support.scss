@@ -12,6 +12,9 @@
 
 // Перевод из px в rem
 
+$maxWidthContainer: 1190;
+$maxWidth: 1440;
+
 @function rem($size) {
   @return calc($size / 14)+rem
 }
@@ -65,9 +68,19 @@
 }
 
 // Fonts
-@include font-face('Roboto', '../fonts/Roboto/Roboto-Bold', bold, normal, ttf);
+@include font-face('Circe', '../fonts/Circe/Circe-Bold', bold, normal, ttf);
+@include font-face('Circe', '../fonts/Circe/Circe-Bold', bold, normal, eot);
+@include font-face('Circe', '../fonts/Circe/Circe-Regular', 400, normal, ttf);
+@include font-face('Circe', '../fonts/Circe/Circe-Regular', 400, normal, eot);
+@include font-face('Circe', '../fonts/Circe/Circe-Light', 300, normal, ttf);
+@include font-face('Circe', '../fonts/Circe/Circe-Light', 300, normal, eot);
+@include font-face('Italiana', '../fonts/Italiana/Italiana-Regular', 400, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Regular', 400, normal, ttf);
+@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Medium', 500, normal, ttf);
 
 // Vars
+
+$blue: #4926E8;
 
 // Путь к спрайту для конкатенации
 
@@ -90,4 +103,8 @@ $sprite: "../svg/dest/stack/sprite.svg#";
     &:focus {
         outline: none;
     }
+}
+
+@mixin underline {
+  border-bottom: 1px solid $blue;
 }
