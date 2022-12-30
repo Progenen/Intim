@@ -187,7 +187,11 @@
 
     &__location-map {
         margin: 16px 0 0 0;
-
+        background-image: url('../images/graphics/catalog-page/map.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 193px;
         iframe {
 
             max-height: 776px;
