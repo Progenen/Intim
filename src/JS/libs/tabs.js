@@ -52,11 +52,9 @@ class Tabs {
         const tabParent = document.querySelector(this.tabParent);
         const tabItem = document.querySelectorAll(this.tabItem);
         const itemsActivated = document.querySelectorAll(this.itemsActivated);
-        console.log("Tabs activated");
         if (tabTitle && tabParent && tabItem) {
             this.resetTabs();
             tabParent.addEventListener('click', (e) => {
-                console.log('dsad');
                 for (let i = 0; i < tabTitle.length; i++) {
                     if (e.target === tabTitle[i]) {
                         if (this.tabIsReset) {
@@ -64,7 +62,6 @@ class Tabs {
                         }
                         tabItem.forEach(element => {
                             if (e.target.getAttribute('data-tab') === element.getAttribute('data-tab')) {
-                                console.log('ok');
                                 if (!(this.tabIsReset)) {
                                     if (!(e.target.classList.contains('tabs-active'))) {
                                         e.target.classList.add('tabs-active');

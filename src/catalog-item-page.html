@@ -31,6 +31,9 @@
                             <li class="profile-main-nav__item" data-tab="reviews">
                                 <a href="#" class="profile-main-nav__link link-reset">Отзывы</a>
                             </li>
+                            <li class="profile-main-nav__item" data-tab="sim" style="display: none;">
+                                <a href="#" class="profile-main-nav__link link-reset">Похожие анкеты</a>
+                            </li>
                             <li class="profile-main-nav__item" data-tab="sim">
                                 <a href="#" class="profile-main-nav__link link-reset">Похожие анкеты</a>
                             </li>
@@ -399,7 +402,7 @@
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                             pariatur.
                         </div>
-                        <div class="profile-main__services profile-main__block tab-content mt-0" data-tab="services">
+                        <div class="profile-main__services profile-main__block tab-content" data-tab="services">
                             <div class="profile-main__services-header">
                                 <div class="profile-main__title">
                                     Предоставляемые услуги: 
@@ -632,7 +635,7 @@
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
-                        <div class="profile-main__reviews profile-main-reviews profile-main__block tab-content" data-tab="reviews">
+                        <div class="profile-main__reviews profile-main__block profile-main-reviews tab-content" data-tab="reviews">
                             <div class="profile-main__title profile-main-reviews__title">Отзывы</div>
                             <div class="profile-main-reviews__noreviews">
                                 <div class="profile-main-reviews__text">К этой анкете ещё нет ни одного отзыва. Вы можете
@@ -693,16 +696,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="profile-main__sim profile-main__block mt-0 tab-content" data-tab="sim">
+                        <div class="profile-main__sim profile-main__block tab-content" data-tab="sim">
                             <div class="profile-main__sim-header">
-                                <div class="profile-main__title">
-                                    Рекомендации
-                                </div>
-                                <div class="profile-main__sim-check">
-                                    Просмотренные анкеты
-                                </div>
+                                <ul class="profile-main__sim-header-list">
+                                    <li class="profile-main__sim-header-item" data-tab="recAnkets">
+                                        Рекомендации
+                                    </li>
+                                    <li class="profile-main__sim-header-item" data-tab="checkedAnkets">
+                                        Просмотренные анкеты
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="profile-main__sim-items">
+                            <div class="profile-main__sim-items" data-tab="recAnkets">
                                 <div class="profile-main__sim-item">
                                     <div class="profile-main__sim-item-photo">
                                         <img src="images/content/catalog-items/women.jpg" alt="">
@@ -722,6 +727,46 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="profile-main__sim-item">
+                                    <div class="profile-main__sim-item-photo">
+                                        <img src="images/content/catalog-items/women.jpg" alt="">
+                                    </div>
+                                    <div class="profile-main__sim-item-name item-name">
+                                        <div class="item-name__text profile-main__sim-title-item-name-text">
+                                            Николь
+                                        </div>
+                                        <img class="item-name__icon profile-main__sim-title-item-name-icon" src="images/graphics/catalog-page/diamond.png" alt="">
+                                    </div>
+                                    <div class="profile-main__sim-item-location metro">
+                                        <svg class="metro__icon">
+                                            <use xlink:href='svg/dest/stack/sprite.svg#metro'></use>
+                                        </svg>
+                                        <div class="metro__text">
+                                            Арбатская
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-main__sim-item">
+                                    <div class="profile-main__sim-item-photo">
+                                        <img src="images/content/catalog-items/women.jpg" alt="">
+                                    </div>
+                                    <div class="profile-main__sim-item-name item-name">
+                                        <div class="item-name__text profile-main__sim-title-item-name-text">
+                                            Николь
+                                        </div>
+                                        <img class="item-name__icon profile-main__sim-title-item-name-icon" src="images/graphics/catalog-page/diamond.png" alt="">
+                                    </div>
+                                    <div class="profile-main__sim-item-location metro">
+                                        <svg class="metro__icon">
+                                            <use xlink:href='svg/dest/stack/sprite.svg#metro'></use>
+                                        </svg>
+                                        <div class="metro__text">
+                                            Арбатская
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profile-main__sim-items" data-tab="checkedAnkets">
                                 <div class="profile-main__sim-item">
                                     <div class="profile-main__sim-item-photo">
                                         <img src="images/content/catalog-items/women.jpg" alt="">
@@ -772,7 +817,7 @@
 </div>
 
 <div class="profile__modal-bg">
-    <div class="profile__modal" id="review">
+    <div class="profile__modal">
         <div class="profile__modal-header">
             <div class="profile__modal-title">
                 Добавить отзыв

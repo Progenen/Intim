@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             `;
             item.append(element.querySelector(itemContent));
-            console.log(element);
             element.querySelector(itemBtn).addEventListener('click', () => {
                 item.classList.toggle('active');
             });
@@ -78,6 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const catalogHeader = document.querySelector('.main-top-menu__list');
 
 
+    // Tabs ankets
+    
+    const tabsAnkets = new Tabs('.profile-main__sim-header-item', '.profile-main__sim', '.profile-main__sim-items', true);
+    tabsAnkets.render();
+    tabsAnkets.activeTab('recAnkets');
+
+
     // Slider 
 
     if (document.querySelector(".profile-main-info__slider")) {
@@ -88,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
             arrows: false,
             customPaging: function(slick, index) {
                 var image = $(slick.$slides[index]).find('.profile-main-info__slider-main-img').attr('src');
-                console.log($(slick.$slides[index]));
                 return `<img src="${ image }" alt="" /> `
               }
           });
@@ -132,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
             element.addEventListener('click', () => {
                 document.querySelector('html').classList.toggle('lock');
                 document.querySelector('.wrapper').classList.toggle('lock');
-                modal.classList.toggle('tabs-active')
+                modal.classList.toggle('active')
             })
         });
 
