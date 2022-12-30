@@ -53,8 +53,11 @@ function html() {
 // Сборка JS модулей с помощью webpack | Building JS modules using webpack
 function scripts() {
     return src([
+        'node_modules/jquery/dist/jquery.min.js',
+        'src/JS/libs/slick.min.js',
         'src/JS/libs/tabs.js',
         'src/JS/libs/targets-lib.js',
+        'src/JS/libs/jquery.fancybox.min.js',
         'src/JS/index.js'
     ])
         .pipe(gulpIf(isDevelopment, sourcemaps.init())) // Инициализация source-maps (Работает только в режиме разработки) | Source-maps initialization (Only works in development mode)
