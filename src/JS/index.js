@@ -120,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         raiting.forEach((element, i) => {
             element.addEventListener("mouseover", () => {
-                console.log('ok');
                 let index = i + 1;
                 raitingStars.setAttribute("x",  (index / 0.005) / 20 +  "%");
             }) ;
@@ -133,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             element.addEventListener('click', () => {
                 document.querySelector('html').classList.toggle('lock');
                 document.querySelector('.wrapper').classList.toggle('lock');
-                modal.classList.toggle('active')
+                modal.classList.toggle('tabs-active')
             })
         });
 
@@ -147,23 +146,9 @@ document.addEventListener('DOMContentLoaded', function () {
         mainMenu.menu.append(location);
         mobileMenu('.header__location-list__item', '.header__location-list__sub', '.header__location-text', '.header__location-text');
         if (document.querySelector('.profile-main-nav')) {
-            const profileNavItem = document.querySelectorAll('[data-tab-title]');
-            const profileBlock = document.querySelectorAll("[data-tab]");
-
-            profileNavItem.forEach((el, i) => {
-                el.addEventListener('click', () => {
-                    profileNavItem.forEach((element, n) => {
-                        element.classList.remove('active');
-                        profileBlock[n].classList.remove('show');
-                    });
-                    profileBlock.forEach(element => {
-                        if (element.getAttribute('data-tab') === el.getAttribute('data-tab-title')) {
-                            element.classList.add('show');
-                            el.classList.add('active');
-                        }
-                    });
-                })
-            });
+            const profileNavTabs = new Tabs('.profile-main-nav__item', '.profile-main', '.tab-content', true);
+            profileNavTabs.render();
+            profileNavTabs.activeTab('photo');
         }
         
         

@@ -67,7 +67,9 @@ main {
 .emoji {
     margin: 0 0 -3px 2px;
 }
-
+a {
+    pointer-events: none;
+}
 main {
 }
 

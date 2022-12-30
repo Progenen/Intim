@@ -55,6 +55,8 @@ function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
         'src/JS/libs/slick.min.js',
+        'src/JS/libs/tabs.js',
+        'src/JS/libs/targets-lib.js',
         'src/JS/libs/jquery.fancybox.min.js',
         'src/JS/index.js'
     ])
