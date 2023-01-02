@@ -17,8 +17,7 @@ html {
     font-weight: 400;
 }
 
-body,
-html {
+body {
     overflow-x: hidden;
 }
 
@@ -50,6 +49,7 @@ main {
 .price {
     padding-right: 15px;
     position: relative;
+
     &::after {
         content: "";
         position: absolute;
@@ -67,8 +67,8 @@ main {
 .emoji {
     margin: 0 0 -3px 2px;
 }
-main {
-}
+
+main {}
 
 .breadcrumbs {
     &__list {
@@ -105,8 +105,7 @@ main {
     }
 }
 
-.raiting {
-}
+.raiting {}
 
 .wrapper {
     display: flex;
@@ -144,8 +143,9 @@ main {
 
 .metro {
     display: flex;
+
     &__icon {
-        
+
         fill: #FF005C;
         width: rem(30);
         height: rem(27);
@@ -163,8 +163,9 @@ main {
     align-items: center;
     margin: 0;
     color: $blue;
+
     &__icon {
-        
+
         width: 30px;
         height: 30px;
         margin: 0 0 0 rem(22);
@@ -174,6 +175,45 @@ main {
         font-weight: 700;
     }
 
+}
+
+.modal-video {
+    background: #fff;
+    max-width: 602px;
+    padding: 15px 20px 15px 20px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: auto;
+
+    &__header {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: rem(22);
+    }
+
+    &__close {
+        fill: $blue;
+        cursor: pointer;
+
+        svg {
+            width: 33px;
+            height: 33px;
+        }
+    }
+
+    &__body {
+        video {
+            width: 100%;
+            border-radius: 7px;
+        }
+    }
+}
+
+.modal-wrapper {
+    background-color: rgba($color: #000000, $alpha: .2);
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 .mt-0 {

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             item.querySelector('.mobile-menu__back').addEventListener('click', () => {
                 item.classList.toggle('active');
             })
-            
+
             document.querySelector('html').append(item);
         });
     }
@@ -77,6 +77,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const catalogHeader = document.querySelector('.main-top-menu__list');
 
 
+    // Video in modal
+
+    const video = document.querySelectorAll('[data-video]');
+    const videoIframe = document.querySelector("video");
+    const videoBody = document.querySelector(".modal-video__body");
+    const newModal = new MinModalJS('.modal-video', {
+        buttonsActive: '[data-video]',
+        buttonsDisActive: '.modal-video__close',
+        keyOpen: false, // Or false
+        modalOutsideClick: true, // if true, modal closed when you click outside content modal
+        whenModalClose: function () {
+            videoIframe.pause();
+        }
+    });
+    video.forEach(element => {
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (videoIframe.getAttribute('src') != element.getAttribute('href')) {
+                videoIframe.src = element.getAttribute('href');
+            }
+        });
+    });
+
     // Map optimize 
     let map_container = document.getElementById('map_container');
     let options_map = {
@@ -102,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Tabs ankets
-    
+
     const tabsAnkets = new Tabs('.profile-main__sim-header-item', '.profile-main__sim', '.profile-main__sim-items', true);
     tabsAnkets.render();
     tabsAnkets.activeTab('recAnkets');
@@ -116,11 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
             slidesToScroll: 1,
             dots: true,
             arrows: false,
-            customPaging: function(slick, index) {
+            customPaging: function (slick, index) {
                 var image = $(slick.$slides[index]).find('.profile-main-info__slider-main-img').attr('src');
-                return `<img src="${ image }" alt="" /> `
-              }
-          });
+                return `<img src="${image}" alt="" /> `
+            }
+        });
     }
 
     // profile-main-nav
@@ -141,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    if(document.querySelector('.profile__modal-form')) {
+    if (document.querySelector('.profile__modal-form')) {
         const raiting = document.querySelectorAll('.profile__modal-form-radio');
         const raitingStars = document.querySelector(".profile__modal-form-raiting-stars-rect");
         const modalBtn = document.querySelectorAll(".profile__modal-toggle");
@@ -150,10 +173,10 @@ document.addEventListener('DOMContentLoaded', function () {
         raiting.forEach((element, i) => {
             element.addEventListener("mouseover", () => {
                 let index = i + 1;
-                raitingStars.setAttribute("x",  (index / 0.005) / 20 +  "%");
-            }) ;
+                raitingStars.setAttribute("x", (index / 0.005) / 20 + "%");
+            });
             if (element.isChecked) {
-                raitingStars.setAttribute("x",  (index / 0.005) / 20 +  "%");
+                raitingStars.setAttribute("x", (index / 0.005) / 20 + "%");
             }
         });
 
@@ -165,11 +188,11 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         });
 
-    }   
+    }
 
-    
 
-    
+
+
 
     if (responsive(680)) {
         mainMenu.menu.append(location);
@@ -179,17 +202,17 @@ document.addEventListener('DOMContentLoaded', function () {
             profileNavTabs.render();
             profileNavTabs.activeTab('photo');
         }
-        
-        
+
+
     }
     if (responsive(860)) {
         mainMenu.menu.append(sidebar);
         mobileMenu('.sidebar-tags__item', '.sidebar-tags__item-list', '.sidebar-tags-item__title', '.sidebar-tags-item__title');
     }
 
-    if(responsive(440)) {
+    if (responsive(440)) {
         mainMenu.menu.prepend(catalogHeader)
     }
 
-   
+
 });
