@@ -3,7 +3,7 @@
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1)+$replace +str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
 
   @return $string;
@@ -21,18 +21,25 @@ $maxWidth: 1440;
 
 @mixin adaptiveValue($property, $startSize, $minSize, $type) {
   $addSize: $startSize - $minSize;
+
   @if $type==1 {
-      #{$property}: $startSize + px;
-      @media (max-width:#{$maxWidthContainer + px}){
-          #{$property} : calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}))
-      }
-  } @else if type==2 {
-      #{$property}: $startSize + px;
-      @media (max-width:#{$maxWidthContainer + px}){
-          #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-      }
-  } @else {
+    #{$property}: $startSize + px;
+
+    @media (max-width:#{$maxWidthContainer + px}) {
+      #{$property} : calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}))
+    }
+  }
+
+  @else if type==2 {
+    #{$property}: $startSize + px;
+
+    @media (max-width:#{$maxWidthContainer + px}) {
       #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  }
+
+  @else {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
   }
 }
 
@@ -41,27 +48,25 @@ $maxWidth: 1440;
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
   $src: null;
 
-  $extmods: (
-    eot: "?",
-    svg: "#" + str-replace($name, " ", "_")
-  );
+  $extmods: (eot: "?",
+    svg: "#" + str-replace($name, " ", "_"));
 
-  $formats: (
-    otf: "opentype",
+  $formats: (otf: "opentype",
     ttf: "truetype"
   );
 
   @each $ext in $exts {
     $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
     $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)),
+    comma);
   }
 
   @font-face {
     font-family: quote($name);
     font-weight: $weight;
     font-style: $style;
-
+    font-display: swap;
     // font-display: block;
     src: $src;
   }
@@ -95,14 +100,15 @@ $sprite: "../svg/dest/stack/sprite.svg#";
 }
 
 @mixin btn {
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    &:focus {
-        outline: none;
-    }
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 @mixin underline {

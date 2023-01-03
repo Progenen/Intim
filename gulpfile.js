@@ -57,7 +57,6 @@ function scripts() {
         'src/JS/libs/min-modal-js.js',
         'src/JS/libs/slick.min.js',
         'src/JS/libs/tabs.js',
-        'src/JS/libs/targets-lib.js',
         'src/JS/index.js'
     ])
         .pipe(gulpIf(isDevelopment, sourcemaps.init())) // Инициализация source-maps (Работает только в режиме разработки) | Source-maps initialization (Only works in development mode)
