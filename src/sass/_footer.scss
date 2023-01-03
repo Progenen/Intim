@@ -84,38 +84,4 @@
 }
 
 @media (max-width:650px){
-    .footer {
-        &__row {
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        &__about{
-            margin: auto;
-        }
-
-        &__about-text {
-            display: none;
-        }
-
-        &__menu-list {
-            text-align: center;
-            margin: 20px 0 0 0;
-        }
-
-        &__mail {
-            text-align: center;
-        }
-        
-        &__menu-list:last-child {
-            display: none;
-        }
-
-        &__mail-descr {
-            margin: 25px auto 21px auto;
-            text-align: center;
-            max-width: 260px;
-            width: 100%;
-        }
-    }
 }

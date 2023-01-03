@@ -54,8 +54,8 @@ function html() {
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
-        'src/JS/libs/min-modal-js.js',
         'src/JS/libs/slick.min.js',
+        'src/JS/libs/min-modal-js.js',
         'src/JS/libs/tabs.js',
         'src/JS/index.js'
     ])

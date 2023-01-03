@@ -8,6 +8,7 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    position: relative;
     font-size: rem(18);
 }
 
@@ -15,10 +16,6 @@ html {
     font-size: 14px;
     font-family: "Circe";
     font-weight: 400;
-}
-
-body {
-    overflow-x: hidden;
 }
 
 main {
@@ -111,6 +108,8 @@ main {}
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .content {
@@ -233,19 +232,5 @@ footer {
 @media (max-width:920px) {
     html {
         font-size: 10px;
-    }
-}
-
-@media (max-width:680px) {
-    .container {
-        padding: 0 7px;
-    }
-
-    .tag {
-        font-size: 18px;
-    }
-
-    .breadcrumbs {
-        display: none;
     }
 }

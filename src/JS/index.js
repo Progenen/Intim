@@ -76,59 +76,81 @@ document.addEventListener('DOMContentLoaded', function () {
     const sidebar = document.querySelector('.sidebar');
     const catalogHeader = document.querySelector('.main-top-menu__list');
 
+    if (responsive(680)) {
+        mainMenu.menu.append(location);
+        mobileMenu('.header__location-list__item', '.header__location-list__sub', '.header__location-text', '.header__location-text');
+        if (document.querySelector('.profile-main-nav')) {
+            const profileNavTabs = new Tabs('.profile-main-nav__item', '.profile-main', '.tab-content', true);
+            profileNavTabs.render();
+            profileNavTabs.activeTab('photo');
+        }
+    }
+
+
+    // Map optimize 
+    if (document.getElementById('map_container')) {
+
+
+        function start_lazy_map() {
+            if (!map_loaded) {
+                let map_block = document.getElementById('ymap_lazy');
+                map_loaded = true;
+                map_block.setAttribute('src', map_block.getAttribute('data-src'));
+                map_block.removeAttribute('data_src');
+                console.log('YMAP LOADED');
+            }
+        }
+
+        let map_loaded = false;
+
+        let map_container = document.getElementById('map_container');
+        let options_map = {
+            once: true,//запуск один раз, и удаление наблюдателя сразу
+            passive: true,
+            capture: true
+        };
+
+        
+        map_container.addEventListener('click', start_lazy_map, options_map);
+        map_container.addEventListener('mouseover', start_lazy_map, options_map);
+        map_container.addEventListener('touchstart', start_lazy_map, options_map);
+        map_container.addEventListener('touchmove', start_lazy_map, options_map);
+    }
+
 
     // Video in modal
 
-    const video = document.querySelectorAll('[data-video]');
-    const videoIframe = document.querySelector("video");
-    const videoBody = document.querySelector(".modal-video__body");
-    const newModal = new MinModalJS('.modal-video', {
-        buttonsActive: '[data-video]',
-        buttonsDisActive: '.modal-video__close',
-        keyOpen: false, // Or false
-        modalOutsideClick: true, // if true, modal closed when you click outside content modal
-        whenModalClose: function () {
-            videoIframe.pause();
-        }
-    });
-    video.forEach(element => {
-        element.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (videoIframe.getAttribute('src') != element.getAttribute('href')) {
-                videoIframe.src = element.getAttribute('href');
+    if (document.querySelector("[data-video]")) {
+        const video = document.querySelectorAll('[data-video]');
+        const videoIframe = document.querySelector("video");
+        const videoBody = document.querySelector(".modal-video__body");
+        const newModal = new MinModalJS('.modal-video', {
+            buttonsActive: '[data-video]',
+            buttonsDisActive: '.modal-video__close',
+            keyOpen: false, // Or false
+            modalOutsideClick: true, // if true, modal closed when you click outside content modal
+            whenModalClose: function () {
+                videoIframe.pause();
             }
         });
-    });
-
-    // Map optimize 
-    let map_container = document.getElementById('map_container');
-    let options_map = {
-        once: true,//запуск один раз, и удаление наблюдателя сразу
-        passive: true,
-        capture: true
-    };
-    function start_lazy_map() {
-        if (!map_loaded) {
-            let map_block = document.getElementById('ymap_lazy');
-            map_loaded = true;
-            map_block.setAttribute('src', map_block.getAttribute('data-src'));
-            map_block.removeAttribute('data_src');
-            console.log('YMAP LOADED');
-        }
+        video.forEach(element => {
+            element.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (videoIframe.getAttribute('src') != element.getAttribute('href')) {
+                    videoIframe.src = element.getAttribute('href');
+                }
+            });
+        });
     }
-    map_container.addEventListener('click', start_lazy_map, options_map);
-    map_container.addEventListener('mouseover', start_lazy_map, options_map);
-    map_container.addEventListener('touchstart', start_lazy_map, options_map);
-    map_container.addEventListener('touchmove', start_lazy_map, options_map);
-
-    let map_loaded = false;
 
 
     // Tabs ankets
 
-    const tabsAnkets = new Tabs('.profile-main__sim-header-item', '.profile-main__sim', '.profile-main__sim-items', true);
-    tabsAnkets.render();
-    tabsAnkets.activeTab('recAnkets');
+    if (document.querySelector(".profile-main__sim")) {
+        const tabsAnkets = new Tabs('.profile-main__sim-header-item', '.profile-main__sim', '.profile-main__sim-items', true);
+        tabsAnkets.render();
+        tabsAnkets.activeTab('recAnkets');
+    }
 
 
     // Slider 
@@ -149,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // profile-main-nav
 
     if (document.querySelector(".profile-main-nav") && document.body.clientWidth >= 680) {
-
         window.addEventListener('scroll', () => {
             document.querySelectorAll(".profile-main__block").forEach((element, i) => {
                 if (element.offsetTop - 30 <= window.scrollY) {
@@ -187,22 +208,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 modal.classList.toggle('active')
             })
         });
-
-    }
-
-
-
-
-
-    if (responsive(680)) {
-        mainMenu.menu.append(location);
-        mobileMenu('.header__location-list__item', '.header__location-list__sub', '.header__location-text', '.header__location-text');
-        if (document.querySelector('.profile-main-nav')) {
-            const profileNavTabs = new Tabs('.profile-main-nav__item', '.profile-main', '.tab-content', true);
-            profileNavTabs.render();
-            profileNavTabs.activeTab('photo');
-        }
-
 
     }
     if (responsive(860)) {
