@@ -35,6 +35,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Smooth scroll
+    $("a[href^='#']").on("click", function () {
+        let href = $(this).attr("href");
+    
+        $("html, body").animate({
+            scrollTop: $(href).offset().top
+        });
+    
+        return false;
+    });
+
     // Burger menu (Header)
 
     class MainMenu {

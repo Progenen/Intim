@@ -754,29 +754,29 @@
                     <nav class="profile-main__nav profile-main-nav">
                         <ul class="profile-main-nav__list">
                             <li class="profile-main-nav__item tabs-active" data-tab="photo">
-                                <a href="#" class="profile-main-nav__link link-reset">Фото</a>
+                                <a href="#info" class="profile-main-nav__link link-reset">Фото</a>
                             </li>
                             <li class="profile-main-nav__item" data-tab="about">
-                                <a href="#" class="profile-main-nav__link link-reset">О приститутке </a>
+                                <a href="#about" class="profile-main-nav__link link-reset">О приститутке </a>
                             </li>
                             <li class="profile-main-nav__item" data-tab="services">
-                                <a href="#" class="profile-main-nav__link link-reset">Услуги</a>
+                                <a href="#services" class="profile-main-nav__link link-reset">Услуги</a>
                             </li>
                             <li class="profile-main-nav__item" data-tab="reviews">
-                                <a href="#" class="profile-main-nav__link link-reset">Отзывы</a>
+                                <a href="#reviews" class="profile-main-nav__link link-reset">Отзывы</a>
                             </li>
                             <li class="profile-main-nav__item" data-tab="sim" style="display: none;">
                                 <a href="#" class="profile-main-nav__link link-reset">Похожие анкеты</a>
                             </li>
                             <li class="profile-main-nav__item" data-tab="sim">
-                                <a href="#" class="profile-main-nav__link link-reset">Похожие анкеты</a>
+                                <a href="#sim" class="profile-main-nav__link link-reset">Похожие анкеты</a>
                             </li>
                         </ul>
                     </nav>
                     <div class="profile-main__blocks">
-                        <div class="profile-main__info profile-main-info profile-main__block">
+                        <div class="profile-main__info profile-main-info profile-main__block" id="info">
                             <div class="row">
-                                <div class="profile-main-info__media tab-content"data-set="photoFirst" data-tab="photo">
+                                <div class="profile-main-info__media tab-content"  data-set="photoFirst" data-tab="photo">
                                     <div class="row">
                                         <div class="profile-main-info__slider">
                                             <div class="profile-main-info__slider-text">
@@ -1128,14 +1128,14 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="profile-main__about profile-main__block tab-content" data-tab="about">
+                        <div class="profile-main__about profile-main__block tab-content" id="about" data-tab="about">
                             <span class="profile-main__title">О себе:</span> Lorem ipsum dolor sit amet, consectetur
                             adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                             minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                             pariatur.
                         </div>
-                        <div class="profile-main__services profile-main__block tab-content" data-tab="services">
+                        <div class="profile-main__services profile-main__block tab-content" id="services" data-tab="services">
                             <div class="profile-main__services-header">
                                 <div class="profile-main__title">
                                     Предоставляемые услуги: 
@@ -1365,7 +1365,7 @@
                                 <script id="ymap_lazy" type="text/javascript" charset="utf-8" async data-src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae39ca6c29a1c7bc2c429e4219220a9f6391eae4142277ed087b0fa6e1ee2e669&amp;width=776&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
                             </div>
                         </div>
-                        <div class="profile-main__reviews profile-main__block profile-main-reviews tab-content" data-tab="reviews">
+                        <div class="profile-main__reviews profile-main__block profile-main-reviews tab-content" id="reviews" data-tab="reviews">
                             <div class="profile-main__title profile-main-reviews__title">Отзывы</div>
                             <div class="profile-main-reviews__noreviews">
                                 <div class="profile-main-reviews__text">К этой анкете ещё нет ни одного отзыва. Вы можете
@@ -1426,7 +1426,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="profile-main__sim profile-main__block tab-content" data-tab="sim">
+                        <div class="profile-main__sim profile-main__block tab-content" id="sim" data-tab="sim">
                             <div class="profile-main__sim-header">
                                 <ul class="profile-main__sim-header-list">
                                     <li class="profile-main__sim-header-item" data-tab="recAnkets">
