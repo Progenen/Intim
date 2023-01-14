@@ -1,11 +1,4 @@
 
 // Fonts
-@include font-face('Circe', '../fonts/Circe/Circe-Bold', bold, normal, ttf);
-@include font-face('Circe', '../fonts/Circe/Circe-Bold', bold, normal, eot);
-@include font-face('Circe', '../fonts/Circe/Circe-Regular', 400, normal, ttf);
-@include font-face('Circe', '../fonts/Circe/Circe-Regular', 400, normal, eot);
-@include font-face('Circe', '../fonts/Circe/Circe-Light', 300, normal, ttf);
-@include font-face('Circe', '../fonts/Circe/Circe-Light', 300, normal, eot);
-@include font-face('Italiana', '../fonts/Italiana/Italiana-Regular', 400, normal, ttf);
-@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Regular', 400, normal, ttf);
-@include font-face('Ubuntu', '../fonts/Ubuntu/Ubuntu-Medium', 500, normal, ttf);
+@include font-face('Iowan Old Style', '../fonts/Iowan Old Style/iowanoldstyle_bold', bold, normal, otf);
+@include font-face('Iowan Old Style', '../fonts/Iowan Old Style/IowanOldStyleBT-Roman', 400, normal, otf);

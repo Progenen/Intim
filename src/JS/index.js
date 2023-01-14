@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <use xlink:href='svg/dest/stack/sprite.svg#arrow'></use>
                     </svg>
                 </div>
-                <div class="mobile-menu__title">${element.querySelector(itemTitle).innerText || element.querySelector(itemTitle).textContent}</div>
+                <div class="mobile-menu__title">${element.querySelector(itemTitle).innerText}</div>
             </div>
             `;
             item.append(element.querySelector(itemContent));
@@ -186,11 +186,11 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll(".profile-main__block").forEach((element, i) => {
                 if (element.offsetTop - 30 <= window.scrollY) {
                     document.querySelectorAll(".profile-main-nav__item").forEach(element => {
-                        if (element.classList.contains('active')) {
-                            element.classList.remove('active')
+                        if (element.classList.contains('tabs-active')) {
+                            element.classList.remove('tabs-active')
                         }
                     })
-                    document.querySelectorAll('.profile-main-nav__item')[i].classList.add('active');
+                    document.querySelectorAll('.profile-main-nav__item')[i].classList.add('tabs-active');
                 }
             })
         })

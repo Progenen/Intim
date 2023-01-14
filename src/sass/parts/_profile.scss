@@ -4,7 +4,7 @@
     &__title {
         font-weight: 700;
         font-size: rem(24);
-        color: #4926E8;
+        color: $blue;
         display: flex;
         align-items: center;
     }
@@ -61,7 +61,7 @@
         font-weight: 700;
         text-align: center;
         line-height: 141.4%;
-        color: #4926E8;
+        color: $blue;
     }
 
     &__modal-close {
@@ -143,7 +143,7 @@
     &__modal-form-captcha {}
 
     &__modal-form-btn {
-        background: linear-gradient(91.2deg, #4926E8 0.29%, #2DC8FF 112.3%);
+        background: $blue;
         border-radius: 10px;
         color: #fff;
         padding: 5px 23px;
@@ -269,13 +269,17 @@
 
     &__sim-item-name {
         margin: 4px 0 3px 0;
+        display: flex;
+        align-items: flex-start;
     }
 
-    &__sim-title-item-name-text {}
+    &__sim-title-item-name-text {
+        color: #000;
+    }
 
     &__sim-title-item-name-icon {
         width: 17px;
-        height: 18px;
+        height: 22px;
         margin-left: 6px;
     }
 
@@ -336,8 +340,7 @@
     &__text {}
 
     &__btn {
-        background: linear-gradient(91.2deg, #4926E8 0.29%, #2DC8FF 112.3%);
-        border-radius: 10px;
+        background: $blue;
         color: #fff;
         padding: 5px 23px;
         line-height: 27px;
@@ -345,6 +348,8 @@
         font-size: rem(17);
         margin-top: 22px;
         width: 100%;
+        box-shadow: 0px 4px 7px rgba(255, 0, 92, 0.25);
+        border-radius: 7px;
     }
 
     &__items {
@@ -690,13 +695,13 @@
     &__characters-alert {
         padding: 12px 10px;
         background: #FFFFFF;
-        border: 1px solid #4926E8;
+        border: 1px solid $blue;
         border-radius: 8px;
         max-width: 187px;
         width: 100%;
         text-align: center;
         text-decoration-line: underline;
-        color: #4926E8;
+        color: $blue;
         position: absolute;
         right: 0;
         top: 0;

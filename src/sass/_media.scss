@@ -80,6 +80,15 @@
             margin-right: 17px;
         }
 
+        &__types-link {
+            width: 100%;
+        }
+
+        &__types-name {
+            text-align: center;
+            flex: 0 1 100%;
+        }
+
         &__filters {
             border: none;
             box-shadow: 0px 0px 10px rgba(73, 38, 232, 0.07);
@@ -202,7 +211,7 @@
                 position: absolute;
                 width: 100%;
                 height: 4px;
-                background-color: #fff;
+                background-color: $blue;
 
                 &:first-child {
                     top: 0;
@@ -218,7 +227,7 @@
                 span {
                     -webkit-transform: scale(0);
                     transform: scale(0);
-                    background-color: #fff
+                    background-color: $blue
                 }
 
                 span:first-child {
@@ -281,7 +290,18 @@
 
 @media (max-width:680px) {
 
-    
+    .sidebar {
+        &__types-icon {
+            
+            width: 28px;
+            height: 28px;
+        }
+
+        &__types-item {
+            padding: 9px 18px;
+        }
+    }
+
     .footer {
         &__row {
             flex-direction: column;
@@ -318,6 +338,7 @@
     }
 
     .header {
+        border-bottom: 1px solid #D9D9D9;
         .burger-menu {
             width: 30px;
             height: 20px;
@@ -341,27 +362,23 @@
             justify-content: center;
 
             a {
-                max-width: 195px;
-                height: 35px;
+                max-width: 213px;
+                max-height: 72px;
 
             }
-        }
-
-        &__logo-img {
-            max-width: 195px;
-            height: 35px;
         }
 
         &__location {
             flex: 0 1 100%;
             justify-content: flex-start;
-            padding: 0 1.3rem;
+            margin-left: 35px;
         }
 
         &__location-icon {
             fill: $blue;
             width: 32px;
             height: 28px;
+            margin-right: 10px;
         }
 
         &__location-text {
@@ -396,9 +413,17 @@
             font-size: 18px;
         }
 
+        &__location-arrow {
+            display: none;
+        }
+
         .header__location-list {
 
             flex-direction: column;
+        }
+
+        &__user {
+            display: block;
         }
     }
 
@@ -654,18 +679,12 @@
     }
 }
 
-@media (max-width:600px) {
-
-
-    .sidebar {
-        &__types-icon {
-            width: 19px;
-        }
-    }
-}
-
 
 @media (max-width:560px) {
+    .header__logo a {
+        max-width: 170px;
+        height: 60px;
+    }
     .profile-main-info {
         &__media .row {
             flex-direction: column;
@@ -703,17 +722,18 @@
     
         &__list {
             flex-direction: column;
-            padding: 0 2rem;
+            margin-left: 42px;
         }
     
         &__link {
             display: flex;
             align-items: center;
             font-size: 18px;
+            color: $blue;
         }
     
         &__icon {
-            width: 5%;
+            width: 7%;
             max-height: 25px;
             margin-right: 17px;
             display: block;
@@ -721,6 +741,10 @@
     
         &__item {
             margin-top: 22px;
+            padding: 0;
+            &.active {
+                border-bottom: none;
+            }
         }
     }
 }
@@ -728,7 +752,7 @@
 
 @media (max-width:430px) {
     .header {
-        padding: 26px 0;
+        padding: 10px 0 26px;
     }
 }
 

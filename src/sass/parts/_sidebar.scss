@@ -2,10 +2,13 @@
     flex: 0 1 23.777%;
 
     &__header {
-        background: linear-gradient(95.86deg, #4926E8 23.41%, #2DC8FF 100%);
+        background: $blue;
         padding: 14px 21px;
         display: flex;
         align-items: center;
+
+        box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.08);
+        border-radius: 7px;
     }
 
     &__header-burger {
@@ -29,9 +32,7 @@
     }
 
     &__types {
-        padding: rem(33) rem(28) rem(35) rem(28);
-        border: 1px solid rgba(73, 38, 232, 0.17);
-        border-radius: 0px 0px 7px 7px;
+        padding: 24px 0 0 0;
     }
 
     &__types-list {
@@ -41,8 +42,12 @@
     }
 
     &__types-item {
-        margin: 22px 0 0 0;
-
+        margin: 8px 0 0 0;
+        padding: 12px 29px;
+        align-items: center;
+        box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.08);
+        border-radius: 7px;
+        display: flex;
         &:first-child {
             margin: 0 0 0 0;
         }
@@ -56,21 +61,24 @@
     }
 
     &__types-icon {
-        width: 9%;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         margin: 0 25px 0 0;
         fill: $blue;
+        color: #fff;
     }
 
     &__filters {
-        border: 1px solid rgba(73, 38, 232, 0.17);
+        box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.08);
+        border-radius: 7px;
         border-radius: 7px;
         padding: 24px 27px 31px 27px;
         margin: 7px 0 0 0;
     }
 
     &__tags {
-        border: 1px solid rgba(73, 38, 232, 0.17);
+        box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.08);
+        border-radius: 7px;
         border-radius: 7px;
         padding: rem(29) rem(25);
         margin-top: 25px;
@@ -86,6 +94,7 @@
 
 .sidebar-filters {
     position: relative;
+
     &__list {
         padding: 0;
         margin: 0;
@@ -96,14 +105,20 @@
         margin-top: 25px;
         cursor: pointer;
         position: relative;
+
         &:first-child {
             margin-top: 0;
         }
 
-        &:hover .sidebar-filters-sub__list {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
+        &:hover  {
+            .sidebar-filters__item-icon {
+                fill: $blue;
+            }
+            .sidebar-filters-sub__list {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
         }
     }
 
@@ -140,6 +155,7 @@
         width: 270px;
         z-index: 5;
         background-color: #fff;
+
         &.ul-columns {
             column-count: 2;
         }
@@ -147,6 +163,7 @@
 
     &__item {
         margin-top: 25px;
+
         &:first-child {
             margin-top: 0;
         }
@@ -205,4 +222,3 @@
         fill: $blue;
     }
 }
-
